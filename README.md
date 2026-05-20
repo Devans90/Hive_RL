@@ -1,4 +1,27 @@
-# Hive_RL — Implementation Plan
+# Hive_RL
+
+## Mission
+
+**Hive_RL is an interface for hosting and building reinforcement-learning agents
+that competitively play the board game [Hive](https://en.wikipedia.org/wiki/Hive_(game)).**
+
+The goals are:
+
+1. **A programmable game engine** — accurate Hive rules with a clean Python API so RL agents can interact with the game state.
+2. **A bot pool** — a local registry of bots that anyone can add to, identified by a name and a Python class.
+3. **ELO tracking** — every match updates each bot's rating so relative strength is recorded over time.
+4. **A tournament runner** — automate round-robin competitions between all registered bots.
+5. **A simple CLI** — `hivesim register / list / match / tournament` to manage the pool and kick off games without writing any glue code.
+
+The intended workflow is:
+
+```
+write a bot  →  register it locally  →  play it against other bots  →  track ELO
+```
+
+---
+
+## Implementation Plan
 
 ## Decision: build in [HiveSim](https://github.com/Devans90/HiveSim)
 
